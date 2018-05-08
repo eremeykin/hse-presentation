@@ -1,0 +1,111 @@
+\documentclass[12pt,tikz]{standalone}
+ 
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes,backgrounds}
+
+\newcommand\Star[3][]{%
+		\path[#1] (0  :#3) -- ( 36:#2) 
+		-- (72 :#3) -- (108:#2)
+		-- (144:#3) -- (180:#2)
+		-- (216:#3) -- (252:#2)
+		-- (288:#3) -- (324:#2)--cycle;
+	}
+\newcommand\Center[3][]{
+	\begin{scope}[shift = {(#2,#3)}, scale=0.08]
+		\Star[#1]{2}{4}
+	\end{scope}
+	}
+	
+\newcommand\point[3][]{
+	\begin{scope}[shift = {(#2,#3)}, scale=0.08]
+		\draw[#1] (0,0) circle (1.5);
+	\end{scope}
+	}
+ 
+\begin{document}
+		\begin{tikzpicture}[scale=1]
+		   \tkzInit[xmax=16,ymax=11,xmin=0,ymin=0]
+			\begin{scope}[dash pattern=on 1pt off 4pt]
+			\tkzGrid
+			\end{scope}
+		   \tkzLabelX[orig=true,label options={font=\normalfont},step=1]
+		   \tkzLabelY[orig=false,label options={font=\normalfont}]
+		   \tkzDrawX[label={}] %right space=1.0,
+		   \tkzDrawY[label={}]
+			
+			\point[fill=black, draw=black]{2.13}{2.31}
+			\point[fill=black, draw=black]{2.63}{2.81}
+			\point[fill=black, draw=black]{1.88}{2.31}
+			\point[fill=black, draw=black]{2.63}{2.06}
+			\point[fill=black, draw=black]{2.23}{1.46}
+			\point[fill=black, draw=black]{1.58}{1.6099999999999999}
+			\point[fill=black, draw=black]{1.63}{2.06}
+			\point[fill=black, draw=black]{1.38}{1.31}
+			\point[fill=black, draw=black]{2.1799999999999997}{2.1100000000000003}
+			\point[fill=black, draw=black]{1.83}{1.8599999999999999}
+			\point[fill=black, draw=black]{3.2375}{6.1}
+			\point[fill=black, draw=black]{3.8375}{6.5}
+			\point[fill=black, draw=black]{3.4375}{6.7}
+			\point[fill=black, draw=black]{3.4375}{6.3}
+			\point[fill=black, draw=black]{3.8375}{6.3}
+			\point[fill=black, draw=black]{3.2375}{6.1}
+			\point[fill=black, draw=black]{3.8375}{6.5}
+			\point[fill=black, draw=black]{3.8375}{6.1}
+			\point[fill=black, draw=black]{4.2375}{5.9}
+			\point[fill=black, draw=black]{4.6375}{5.5}
+			\point[fill=black, draw=black]{4.6375}{5.7}
+			\point[fill=black, draw=black]{4.2375}{5.9}
+			\point[fill=black, draw=black]{4.2375}{5.3}
+			\point[fill=black, draw=black]{4.6375}{5.5}
+			\point[fill=black, draw=black]{4.4375}{5.7}
+			\point[fill=black, draw=black]{4.2375}{5.9}
+			\point[fill=black, draw=black]{7.812058}{7.91921273}
+			\point[fill=black, draw=black]{6.98118741}{7.877679}
+			\point[fill=black, draw=black]{8.54547153}{8.69115468}
+			\point[fill=black, draw=black]{9.165180639999999}{7.52003546}
+			\point[fill=black, draw=black]{8.21358181}{8.276599860000001}
+			\point[fill=black, draw=black]{8.2315306}{7.54670633}
+			\point[fill=black, draw=black]{9.39634632}{7.70798658}
+			\point[fill=black, draw=black]{8.6795104}{8.3599917}
+			\point[fill=black, draw=black]{8.54328673}{8.03756002}
+			\point[fill=black, draw=black]{8.43956466}{7.85962865}
+			\point[fill=black, draw=black]{7.42553602}{7.38564832}
+			\point[fill=black, draw=black]{8.334863930000001}{7.51650506}
+			\point[fill=black, draw=black]{7.76197977}{8.01343445}
+			\point[fill=black, draw=black]{10.44732954}{3.89573101}
+			\point[fill=black, draw=black]{9.14345684}{4.460019389999999}
+			\point[fill=black, draw=black]{8.86688485}{3.63473389}
+			\point[fill=black, draw=black]{7.59755558}{3.70343663}
+			\point[fill=black, draw=black]{8.191160570000001}{3.71538839}
+			\point[fill=black, draw=black]{10.31343245}{4.63835941}
+			\point[fill=black, draw=black]{9.15882059}{2.98267676}
+			\point[fill=black, draw=black]{7.44631872}{2.8917449299999998}
+			\point[fill=black, draw=black]{9.24811186}{3.99537327}
+			\point[fill=black, draw=black]{10.86304926}{5.02213552}
+			\point[fill=black, draw=black]{9.65681417}{3.35879586}
+			\point[fill=black, draw=black]{8.583686310000001}{3.64166512}
+			\point[fill=black, draw=black]{10.44421909}{3.49394654}
+			\point[fill=black, draw=black]{8.54357414}{3.94752138}
+			\point[fill=black, draw=black]{10.09558337}{5.086727}
+			\point[fill=black, draw=black]{10.12190388}{3.10876766}
+			\point[fill=black, draw=black]{8.142720709999999}{4.408464840000001}
+			\point[fill=black, draw=black]{10.02101185}{2.68382217}
+			\point[fill=black, draw=black]{8.736270430000001}{3.30132992}
+
+			\Center[fill=black,draw]{7.290147525882352}{5.587099113970588}
+			\Center[fill=red,draw]{1.38}{1.31}
+%			\Center[fill=black,draw]{2.0100000000000002}{1.9899999999999998}
+			\point[fill=black, draw=black]{2.13}{2.31}
+			\point[fill=black, draw=black]{2.63}{2.81}
+			\point[fill=black, draw=black]{1.88}{2.31}
+			\point[fill=black, draw=black]{2.63}{2.06}
+			\point[fill=black, draw=black]{2.23}{1.46}
+			\point[fill=black, draw=black]{1.58}{1.6099999999999999}
+			\point[fill=black, draw=black]{1.63}{2.06}
+			\point[fill=black, draw=black]{1.38}{1.31}
+			\point[fill=black, draw=black]{2.1799999999999997}{2.1100000000000003}
+
+
+			
+		\end{tikzpicture}
+\end{document}

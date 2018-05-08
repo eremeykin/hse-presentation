@@ -1,0 +1,74 @@
+\documentclass[12pt,tikz]{standalone}
+ 
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes,backgrounds}
+
+\newcommand\Star[3][]{%
+		\path[#1] (0  :#3) -- ( 36:#2) 
+		-- (72 :#3) -- (108:#2)
+		-- (144:#3) -- (180:#2)
+		-- (216:#3) -- (252:#2)
+		-- (288:#3) -- (324:#2)--cycle;
+	}
+\newcommand\Center[3][]{
+	\begin{scope}[shift = {(#2,#3)}, scale=0.08]
+		\Star[#1]{2}{4}
+	\end{scope}
+	}
+	
+\newcommand\point[3][]{
+	\begin{scope}[shift = {(#2,#3)}, scale=0.08]
+		\draw[#1] (0,0) circle (1.5);
+	\end{scope}
+	}
+ 
+\begin{document}
+		\begin{tikzpicture}[scale=1]
+		   \tkzInit[xmax=16,ymax=11,xmin=0,ymin=0]
+			\begin{scope}[dash pattern=on 1pt off 4pt]
+			\tkzGrid
+			\end{scope}
+		   \tkzLabelX[orig=true,label options={font=\normalfont},step=1]
+		   \tkzLabelY[orig=false,label options={font=\normalfont}]
+		   \tkzDrawX[label={}] %right space=1.0,
+		   \tkzDrawY[label={}]
+		   
+
+%			\point[fill=black, draw=black]{7.812058}{7.91921273}
+%			\point[fill=black, draw=black]{6.98118741}{7.877679}
+%			\point[fill=black, draw=black]{8.54547153}{8.69115468}
+%			\point[fill=black, draw=black]{9.165180639999999}{7.52003546}
+%			\point[fill=black, draw=black]{8.21358181}{8.276599860000001}
+%			\point[fill=black, draw=black]{8.2315306}{7.54670633}
+%			\point[fill=black, draw=black]{9.39634632}{7.70798658}
+%			\point[fill=black, draw=black]{8.6795104}{8.3599917}
+%			\point[fill=black, draw=black]{8.54328673}{8.03756002}
+%			\point[fill=black, draw=black]{8.43956466}{7.85962865}
+%			\point[fill=black, draw=black]{7.42553602}{7.38564832}
+%			\point[fill=black, draw=black]{8.334863930000001}{7.51650506}
+%			\point[fill=black, draw=black]{7.76197977}{8.01343445}
+%
+%
+%
+%%			\Center[fill=red,draw]{8.54547153}{8.69115468}
+%
+%			
+%			\point[fill=red, draw=red]{7.812058}{7.91921273}
+%			\point[fill=red, draw=red]{6.98118741}{7.877679}
+%			\point[fill=red, draw=red]{8.54547153}{8.69115468}
+%			\point[fill=red, draw=red]{9.165180639999999}{7.52003546}
+%			\point[fill=red, draw=red]{8.21358181}{8.276599860000001}
+%			\point[fill=red, draw=red]{8.2315306}{7.54670633}
+%			\point[fill=red, draw=red]{9.39634632}{7.70798658}
+%			\point[fill=red, draw=red]{8.6795104}{8.3599917}
+%			\point[fill=red, draw=red]{8.54328673}{8.03756002}
+%			\point[fill=red, draw=red]{8.43956466}{7.85962865}
+%			\point[fill=red, draw=red]{7.42553602}{7.38564832}
+%			\point[fill=red, draw=red]{8.334863930000001}{7.51650506}
+%			\point[fill=red, draw=red]{7.76197977}{8.01343445}
+%			\Center[fill=red,draw]{8.271545986153846}{7.900934064615385}
+
+			\Center[fill=black,draw]{7.290147525882352}{5.587099113970588}
+		
+		\end{tikzpicture}
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass{beamer}
+
+\newif\ifframeinlbf
+\frameinlbftrue
+\makeatletter
+\newcommand\listofframes{\@starttoc{lbf}}
+\makeatother
+
+\addtobeamertemplate{frametitle}{}{%
+	\ifframeinlbf
+	\addcontentsline{lbf}{section}{\protect\makebox[2em][l]{%
+			\protect\usebeamercolor[fg]{structure}\insertframenumber\hfill}%
+		\insertframetitle\par}%
+	\else\fi
+}
+
+\begin{document}
+	
+	\frameinlbffalse
+	\begin{frame}{LOF}
+%		\frametitle{List of Frames}
+		\listofframes
+	\end{frame}
+	
+	\frameinlbftrue
+	\begin{frame}
+		\frametitle{Test Frame One}
+		test
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Test Frame Two}
+		test
+	\end{frame}
+	
+\end{document}
