@@ -33,9 +33,6 @@
 		   \tkzDrawX[label={}] %right space=1.0,
 		   \tkzDrawY[label={}]
 		   
-
-
-
 			\point[fill=green, draw=green]{9.9967442}{8.24416339}
 			\point[fill=green, draw=green]{9.82322753}{8.656664079999999}
 			
@@ -108,19 +105,14 @@
 			\point[fill=green, draw=green]{7.42553602}{7.38564832}
 			\point[fill=green, draw=green]{8.334863930000001}{7.51650506}
 			\point[fill=green, draw=green]{7.76197977}{8.01343445}
-		
-		
-		
-
-
-		
-		
-			\Center[fill=blue,draw]{3.9999999999999996}{6.000000000000001}
-			\Center[fill=green,draw]{8.490004636666665}{7.974198020666667}
-			\Center[fill=cyan,draw]{9.24325811631579}{3.7879284047368422}
-			\Center[fill=red,draw]{2.0100000000000002}{1.9899999999999998}
-			\Center[fill=brown,draw]{13.582257250000001}{9.054891218749999}
-%			\Center[fill=black,draw]{7.290147525882352}{5.587099113970588}
-		
+			
+			\draw [black, fill=white!50!black, fill opacity=0.2, shift={(0,0)}, dash pattern=on 3pt off 3pt, tension=0.50] plot [smooth cycle] coordinates {
+				(0.7,3)  (0.8,1) (2,0.4) (3,1) (5.2,5) (5.2,6.2) (4,7.3) (2.5,7)
+			};
+			
+			\draw[draw=white, fill=white] (6,.3) rectangle ++(10.3,1.8);
+			\node [text=black] at (11.1, 1.2) {\Large $ \displaystyle				d_{Ward}(C_a,C_b) = \frac{N_1 N_2}{N_1 + N_2} \sum_{v=1}^{V} (c_{av}-c_{bv})^2$};
+			
+				
 		\end{tikzpicture}
 \end{document}

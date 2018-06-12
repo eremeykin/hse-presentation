@@ -1,0 +1,130 @@
+\documentclass[12pt,tikz]{standalone}
+ 
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{shapes,backgrounds}
+
+\newcommand\Star[3][]{%
+		\path[#1] (0  :#3) -- ( 36:#2) 
+		-- (72 :#3) -- (108:#2)
+		-- (144:#3) -- (180:#2)
+		-- (216:#3) -- (252:#2)
+		-- (288:#3) -- (324:#2)--cycle;
+	}
+\newcommand\Center[3][]{
+	\begin{scope}[shift = {(#2,#3)}, scale=0.07]
+		\Star[#1]{2}{4}
+	\end{scope}
+	}
+	
+\newcommand\point[3][]{
+	\begin{scope}[shift = {(#2,#3)}, scale=0.08]
+		\draw[#1] (0,0) circle (1.5);
+	\end{scope}
+	}
+ 
+\begin{document}
+	
+		\begin{tikzpicture}[scale=1]
+		   \tkzInit[xmax=9,ymax=10,xmin=0,ymin=0]
+			\begin{scope}[dash pattern=on 1pt off 4pt]
+			\tkzGrid
+			\end{scope}
+			\begin{scope}[shift={(4,5)}]
+			\point[fill=red, draw=red]{-0.14371327}{ 0.69433546}
+			\point[fill=red, draw=red]{-0.77628367}{-0.17841153}
+			\point[fill=red, draw=red]{0.1840192}{-0.30206594}
+			\point[fill=red, draw=red]{ 1.24361764}{ 0.18024732}
+			\point[fill=red, draw=red]{-0.58546805}{ 0.85712519}
+			\point[fill=red, draw=red]{ 0.31673515}{ 0.61044367}
+			\point[fill=red, draw=red]{-0.47216927}{ 0.00151946}
+			\point[fill=red, draw=red]{-0.36127517}{-0.56171685}
+
+			\draw[draw=red] (-0.14371327, 0.69433546) -- (-0.10749482, 0.1751846);
+			\draw[draw=red] (-0.77628367,-0.17841153) -- (-0.10749482, 0.1751846);
+			\draw[draw=red] (0.1840192,-0.30206594) -- (-0.10749482, 0.1751846);
+			\draw[draw=red] ( 1.24361764, 0.18024732) -- (-0.10749482, 0.1751846);
+			\draw[draw=red] (-0.58546805, 0.85712519) -- (-0.10749482, 0.1751846);
+			\draw[draw=red] ( 0.31673515, 0.61044367) -- (-0.10749482, 0.1751846);
+			\draw[draw=red] (-0.47216927, 0.00151946) -- (-0.10749482, 0.1751846);
+			\draw[draw=red] (-0.36127517,-0.56171685) -- (-0.10749482, 0.1751846);
+			\begin{scope}
+			\Center[fill=red,draw]{-0.10749482}{0.1751846}		
+			\end{scope}
+			\end{scope}
+
+			\begin{scope}[shift={(2,2)}]
+			\point[fill=green, draw=green]{-0.86025254}{1.15528596}
+			\point[fill=green, draw=green]{-1.35358856}{-1.24908991}
+			\point[fill=green, draw=green]{1.22950384}{0.17082808}
+			\point[fill=green, draw=green]{0.97192185}{-0.72720149}
+			\point[fill=green, draw=green]{-1.29859612}{0.45672504}
+			\point[fill=green, draw=green]{0.00816107}{0.97837301}
+			\point[fill=green, draw=green]{0.68018986}{1.18907356}
+			\point[fill=green, draw=green]{2.29440779}{0.06838547}
+  
+			\draw[draw=green](-0.86025254,1.15528596) --	(0.2089684,0.38029746) ;
+			\draw[draw=green](-1.35358856,-1.24908991) -- (0.2089684,0.38029746);
+			\draw[draw=green](1.22950384,0.17082808) -- (0.2089684,0.38029746);
+			\draw[draw=green](0.97192185,-0.72720149) -- (0.2089684,0.38029746);
+			\draw[draw=green](-1.29859612,0.45672504) -- (0.2089684,0.38029746);
+			\draw[draw=green](0.00816107,0.97837301) -- (0.2089684,0.38029746);
+			\draw[draw=green](0.68018986,1.18907356) -- (0.2089684,0.38029746);
+			\draw[draw=green](2.29440779,0.06838547) -- (0.2089684,0.38029746);
+			\Center[fill=green,draw]{0.2089684 }{0.38029746}		
+			\end{scope}		
+			
+			\begin{scope}[shift={(7,5.5)},rotate around={147:(-0.10749482, 0.1751846)}]
+			\point[fill=blue, draw=blue]{-0.14371327}{ 0.69433546}
+			\point[fill=blue, draw=blue]{-0.77628367}{-0.17841153}
+			\point[fill=blue, draw=blue]{0.1840192}{-0.30206594}
+%			\point[fill=blue, draw=blue]{ 1.24361764}{ 0.18024732}
+			\point[fill=blue, draw=blue]{-0.58546805}{ 0.85712519}
+			\point[fill=blue, draw=blue]{ 0.31673515}{ 0.61044367}
+			\point[fill=blue, draw=blue]{-0.47216927}{ 0.00151946}
+			\point[fill=blue, draw=blue]{-0.36127517}{-0.56171685}
+			
+			\draw[draw=blue] (-0.14371327, 0.69433546) -- (-0.10749482, 0.1751846);
+			\draw[draw=blue] (-0.77628367,-0.17841153) -- (-0.10749482, 0.1751846);
+			\draw[draw=blue] (0.1840192,-0.30206594) -- (-0.10749482, 0.1751846);
+%			\draw[draw=blue] ( 1.24361764, 0.18024732) -- (-0.10749482, 0.1751846);
+			\draw[draw=blue] (-0.58546805, 0.85712519) -- (-0.10749482, 0.1751846);
+			\draw[draw=blue] ( 0.31673515, 0.61044367) -- (-0.10749482, 0.1751846);
+			\draw[draw=blue] (-0.47216927, 0.00151946) -- (-0.10749482, 0.1751846);
+			\draw[draw=blue] (-0.36127517,-0.56171685) -- (-0.10749482, 0.1751846);
+
+			\Center[fill=blue,draw]{-0.10749482}{0.1751846}		
+
+			\end{scope}
+
+			\begin{scope}[shift={(6,2.5)}, rotate around={153:(0.2089684,0.38029746)}]
+			\point[fill=orange, draw=orange]{-0.86025254}{1.15528596}
+			\point[fill=orange, draw=orange]{-1.35358856}{-1.24908991}
+			\point[fill=orange, draw=orange]{1.22950384}{0.17082808}
+			\point[fill=orange, draw=orange]{0.97192185}{-0.72720149}
+			\point[fill=orange, draw=orange]{-1.29859612}{0.45672504}
+			\point[fill=orange, draw=orange]{0.00816107}{0.97837301}
+			\point[fill=orange, draw=orange]{0.68018986}{1.18907356}
+%			\point[fill=orange, draw=orange]{2.29440779}{0.06838547}
+			
+			\draw[draw=orange](-0.86025254,1.15528596) --	(0.2089684,0.38029746) ;
+			\draw[draw=orange](-1.35358856,-1.24908991) -- (0.2089684,0.38029746);
+			\draw[draw=orange](1.22950384,0.17082808) -- (0.2089684,0.38029746);
+			\draw[draw=orange](0.97192185,-0.72720149) -- (0.2089684,0.38029746);
+			\draw[draw=orange](-1.29859612,0.45672504) -- (0.2089684,0.38029746);
+			\draw[draw=orange](0.00816107,0.97837301) -- (0.2089684,0.38029746);
+			\draw[draw=orange](0.68018986,1.18907356) -- (0.2089684,0.38029746);
+%			\draw[draw=orange](2.29440779,0.06838547) -- (0.2089684,0.38029746);
+			\Center[fill=green,draw]{0.2089684 }{0.38029746}		
+			\end{scope}
+
+
+
+			\draw[draw=black, fill=white] (0.3,7) rectangle ++(8.4,2);
+			\node [text=black] at (4.5, 8) {\Large $ \displaystyle W(S,c) = \sum_{k=1}^{K} \sum_{i \in C_k}^{} d(y_i, c_k)$};
+
+
+			\draw[draw=black] (0,0) rectangle ++(9,10);
+		\end{tikzpicture}
+\end{document}

@@ -1,5 +1,5 @@
 %\documentclass[]{beamer}
-\documentclass[aspectratio=169]{beamer}
+\documentclass[aspectratio=169,tikz]{beamer}
 \pdfpkresolution=8000
 \usepackage[utf8]{inputenc} % use UTF-8
 \usepackage[T2A,OT1]{fontenc} % rus fonts
@@ -8,6 +8,7 @@
 \usepackage{xspace}
 \usepackage{lipsum}
 \usepackage{standalone}
+
 %\usepackage{ragged2e}
 %\justifying
 
@@ -85,6 +86,10 @@
 
 
 \begin{document}
+	\usetikzlibrary{shapes,backgrounds}
+	\usetikzlibrary{arrows.meta}
+	\usetikzlibrary{snakes}
+	
 	\begin{frame}
 		\titlepage
 	\end{frame}
@@ -115,11 +120,6 @@
 	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}{Традиционное решение (\kmeans)}
-%		\begin{block}{}
-%			\parbox{\linewidth}{
-%				
-%			}
-%		\end{block}
 
        \begin{columns}
        	
@@ -140,9 +140,13 @@
        	\column{0.38\linewidth}
        	\centering
        	\vspace{-.4cm}
-       	\begin{figure}
-       	\includegraphics[scale=0.45]{img/iris-kmeans-svd}
-
+%       	\begin{figure}
+%       	\includegraphics[scale=0.45]{img/iris-kmeans-svd}
+%
+%		\end{figure}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[width=\linewidth]{img/tikz/k-means/k-means-1}
 		\end{figure}
        \end{columns} 
 
@@ -162,7 +166,8 @@
 	
 	\end{frame}
 
-	
+	\section{Алгоритм \ikmeans}
+		
 	\begin{frame}{\ikmeans 1}
 			\begin{figure} % \ContinuedFloat
 				\centering
@@ -170,21 +175,14 @@
 			\end{figure}
 	\end{frame}
 	
-	\begin{frame}{\ikmeans 2}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-2}
 		\end{figure}
 	\end{frame}
-	
-	\begin{frame}{\ikmeans 3}
-		\begin{figure} % \ContinuedFloat
-			\centering
-			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-3}
-		\end{figure}
-	\end{frame}
-		
-	\begin{frame}{\ikmeans 4}
+			
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-4}
@@ -192,126 +190,99 @@
 	\end{frame}	
 	
 		
-	\begin{frame}{\ikmeans 5}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-5}
 		\end{figure}
 	\end{frame}		
 		
-	\begin{frame}{\ikmeans 6}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-6}
 		\end{figure}
 	\end{frame}		
-		
-	\begin{frame}{\ikmeans 7}
-		\begin{figure} % \ContinuedFloat
-			\centering
-			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-7}
-		\end{figure}
-	\end{frame}		
-	
-	\begin{frame}{\ikmeans 8}
+			
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-8}
 		\end{figure}
 	\end{frame}		
 	
-	\begin{frame}{\ikmeans 9}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-9}
 		\end{figure}
 	\end{frame}	
 			
-	\begin{frame}{\ikmeans 10}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-10}
 		\end{figure}
 	\end{frame}			
-	
-	\begin{frame}{\ikmeans 11}
-		\begin{figure} % \ContinuedFloat
-			\centering
-			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-11}
-		\end{figure}
-	\end{frame}			
-	
-	\begin{frame}{\ikmeans 12}
+		
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-12}
 		\end{figure}
 	\end{frame}
 	
-	\begin{frame}{\ikmeans 13}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-13}
 		\end{figure}
 	\end{frame}	
 	
-	\begin{frame}{\ikmeans 14}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-14}
 		\end{figure}
 	\end{frame}	
-
-	\begin{frame}{\ikmeans 15}
-		\begin{figure} % \ContinuedFloat
-			\centering
-			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-15}
-		\end{figure}
-	\end{frame}	
 	
-	\begin{frame}{\ikmeans 16}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-16}
 		\end{figure}
 	\end{frame}	
 	
-	\begin{frame}{\ikmeans 17}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-17}
 		\end{figure}
 	\end{frame}	
 	
-	\begin{frame}{\ikmeans 18}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-18}
 		\end{figure}
 	\end{frame}	
 
-	\begin{frame}{\ikmeans 19}
-		\begin{figure} % \ContinuedFloat
-			\centering
-			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-19}
-		\end{figure}
-	\end{frame}	
 
-	\begin{frame}{\ikmeans 20}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-20}
 		\end{figure}
 	\end{frame}	
 	
-	\begin{frame}{\ikmeans 21}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-21}
 		\end{figure}
 	\end{frame}	
 		
-	\begin{frame}{\ikmeans 22}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-22}
@@ -319,77 +290,139 @@
 	\end{frame}	
 	
 		
-	\begin{frame}{\ikmeans 23}
+	\begin{frame}{Алгоритм \ikmeans}
 		\begin{figure} % \ContinuedFloat
 			\centering
 			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-23}
 		\end{figure}
 	\end{frame}	
+	
+	\section{Алгоритм \AWard}
 
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/A-Ward-1}
+		\end{figure}
+	\end{frame}	
+
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/A-Ward-2}
+		\end{figure}
+	\end{frame}	
 	
-%	\begin{frame}{\ikmeans 15}
-%		\begin{figure} % \ContinuedFloat
-%			\centering
-%			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-15}
-%		\end{figure}
-%	\end{frame}	
-%	
-%	
-%	\begin{frame}{\ikmeans 16}
-%		\begin{figure} % \ContinuedFloat
-%			\centering
-%			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-16}
-%		\end{figure}
-%	\end{frame}	
-%	
-%	\begin{frame}{\ikmeans 17}
-%		\begin{figure} % \ContinuedFloat
-%			\centering
-%			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-17}
-%		\end{figure}
-%	\end{frame}		
-%	
-%	\begin{frame}{\ikmeans 18}
-%		\begin{figure} % \ContinuedFloat
-%			\centering
-%			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-18}
-%		\end{figure}
-%	\end{frame}		
-%	
-%	\begin{frame}{\ikmeans 19}
-%		\begin{figure} % \ContinuedFloat
-%			\centering
-%			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-19}
-%		\end{figure}
-%	\end{frame}		
-%			
-%	\begin{frame}{\ikmeans 20}
-%		\begin{figure} % \ContinuedFloat
-%			\centering
-%			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-20}
-%		\end{figure}
-%	\end{frame}	
-%		
-%	\begin{frame}{\ikmeans 21}
-%		\begin{figure} % \ContinuedFloat
-%			\centering
-%			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-21}
-%		\end{figure}
-%	\end{frame}	
-%	
-%	
-%	
-%	\begin{frame}{\ikmeans 22}
-%		\begin{figure} % \ContinuedFloat
-%			\centering
-%			\includestandalone[height=0.9\textheight]{img/tikz/ik-means/ik-means-22}
-%		\end{figure}
-%	\end{frame}	
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/A-Ward-3}
+		\end{figure}
+	\end{frame}	
 	
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/A-Ward-4}
+		\end{figure}
+	\end{frame}	
 	
-	
-	
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/A-Ward-5}
+		\end{figure}
+	\end{frame}	
 		
+		
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/A-Ward-6}
+		\end{figure}
+	\end{frame}	
+	
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/A-Ward-7}
+		\end{figure}
+	\end{frame}	
+	
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/A-Ward-8}
+		\end{figure}
+	\end{frame}		
+
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/A-Ward-9}
+		\end{figure}
+	\end{frame}		
+	
+	\begin{frame}{Алгоритм \AWard}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/A-Ward/ward-tree}
+		\end{figure}
+	\end{frame}		
+
+	\section{Алгоритм \dePDDP}
+	
+	\begin{frame}{Алгоритм \dePDDP}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/depddp/depddp-1}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Алгоритм \dePDDP}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/depddp/depddp-2}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Алгоритм \dePDDP}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/depddp/depddp-3}
+		\end{figure}
+	\end{frame}	
+
+	\begin{frame}{Алгоритм \dePDDP}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/depddp/depddp-4}
+		\end{figure}
+	\end{frame}	
+	
+	\begin{frame}{Алгоритм \dePDDP}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/depddp/depddp-5}
+		\end{figure}
+	\end{frame}	
+	
+
+	\begin{frame}{Алгоритм \dePDDP}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/depddp/depddp-6}
+		\end{figure}
+	\end{frame}	
+	
+	
+	\begin{frame}{Алгоритм \dePDDP}
+		\begin{figure} % \ContinuedFloat
+			\centering
+			\includestandalone[height=0.9\textheight]{img/tikz/depddp/depddp-7}
+		\end{figure}
+	\end{frame}	
+
 	\begin{frame}{Система с точки зрения пользователя}
 		
 	\end{frame}
