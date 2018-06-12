@@ -3,6 +3,10 @@
 \usepackage{tkz-euclide}
 \usetikzlibrary{shapes,backgrounds}
 
+\usepackage[utf8]{inputenc} % use UTF-8
+\usepackage[T2A,OT1]{fontenc} % rus fonts
+\usepackage[russian]{babel}
+
 \newcommand\Star[3][]{%
 		\path[#1] (0  :#3) -- ( 36:#2) 
 		-- (72 :#3) -- (108:#2)
@@ -103,10 +107,10 @@
 			\point[fill=black, draw=black]{13.380265529999999}{9.34853987}
 
 
-			\Center[fill=black,draw]{7.290147525882352}{5.587099113970588}
-			\Center[fill=brown,draw]{15.08696849}{8.73650366}
-%			\Center[fill=black,draw]{12.847802973}{8.933995721999999}
-
+			\Center[fill=red,draw]{7.290147525882352}{5.587099113970588}
+			\Center[fill=yellow,draw]{15.08696849}{8.73650366}
+			\node[text width=3cm, xshift=1.9cm,yshift=0.6cm] at (7.290147525882352,5.587099113970588) {\textbf{\Large глобальный центр данных}};
+			\node[text width=3cm, xshift=-0.2cm,yshift=-0.9cm] at (15.08696849,8.73650366) {\textbf{\Large центр кластера}};
 			\point[fill=black, draw=black]{9.9967442}{8.24416339}
 			\point[fill=black, draw=black]{9.82322753}{8.656664079999999}
 			\point[fill=black, draw=black]{13.00140932}{8.60137467}

@@ -1,0 +1,20 @@
+\documentclass[12pt,tikz]{standalone}
+ 
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes,backgrounds}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{snakes}
+\usepackage{mathtools} 
+\begin{document}
+		\begin{tikzpicture}[scale=1]
+   		\tkzInit[xmax=3,ymax=3,xmin=-3,ymin=-3]
+		\begin{scope}[dash pattern=on 1pt off 4pt]
+		\tkzGrid
+		\end{scope}
+
+		\node [black] at (0, 0) {$ \underbrace{BiKM}_{\makebox[0pt]{\text{Bisecting K-Means}}}-R $};
+		\draw [draw=black] (0.68,0.15) rectangle ++(0.4,0.4);
+		\draw (0.68+0.2,0.15+0.4) -- ++ (0.5,1) -- ++(0.25,0);
+		\node [black, anchor=west] at (1.5, 1.55) {Random projections};		
+		\end{tikzpicture}
+\end{document}

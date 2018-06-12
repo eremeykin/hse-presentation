@@ -1,0 +1,95 @@
+\documentclass[12pt,tikz]{standalone}
+
+\usepackage[utf8]{inputenc} % use UTF-8
+\usepackage{mmap}
+\usepackage[T2A,OT1]{fontenc} % rus fonts
+\usepackage[russian]{babel} % russian language
+
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes,backgrounds}
+
+\tikzset{weird fill/.style={append after command={
+			\pgfextra
+			\draw[sharp corners, fill=#1,fill opacity=0.3, draw=none]% 
+			(\tikzlastnode)% 
+			[rounded corners=8pt] -| (\tikzlastnode.west)
+			[rounded corners=8pt] |- (\tikzlastnode.north)% 
+			[rounded corners=8pt] -| (\tikzlastnode.east)% 
+			[rounded corners=8pt] |- (\tikzlastnode.south);
+			\endpgfextra}}}
+
+\newcommand\pack[6][]{%
+	\path[#1] (#4,#5) -- (#4-#2 , #5)
+	-- (#4-#2 ,#5+#3) -- (#4-#2 ,#5+#3 + 0.7)
+	-- (#4-#2 + #6 * #2 ,#5+#3 + 0.7) -- (#4-#2 + #6 * #2+0.0 ,#5+ #3)
+	-- (#4, #5+#3)
+	--cycle;
+	\path[#1] (#4-#2 , #5+ #3) -- (#4-#2 + 0.8* #2+0.5 ,#5+ #3);
+}
+
+\def\package[#1](#2:#3:#4:#5:#6){%
+	% Synopsis                 2  3 4 5 6
+	% \package[draw options](text:w:h:x:y)
+%	\pack[draw=black, rounded corners=8pt, thick, fill=white]{#3}{#4}{#5}{#6};
+%	\pack[draw=black, rounded corners=8pt, thick, fill opacity=0.2, #1]{#3}{#4}{#5}{#6};
+%	\node [anchor=west, draw=black, thick] at (#5-#3,  #6+#4+0.35) {\texttt{#2}};	
+	
+%	\node [anchor=west] at (#5-#3,  #6+#4+0.35) {\texttt{#2}};
+	\draw node[minimum height=5mm,anchor=south west,minimum width=15mm,
+	append after command={[rounded corners=8pt](b.west)|-(b.north)},
+	append after command={[rounded corners=8pt](b.north)-|(b.east)},
+	append after command={[rounded corners=0pt](b.east)|-(b.south)},
+	append after command={[rounded corners=0pt](b.south)-|(b.west)}, weird fill=#1]
+	(b) at (#5,  #6+#4) {\texttt{#2}};
+	
+	\draw node[minimum height=5mm,anchor=south west,minimum width=15mm,
+	append after command={[rounded corners=8pt](b.west)|-(b.north)},
+	append after command={[rounded corners=8pt](b.north)-|(b.east)},
+	append after command={[rounded corners=0pt](b.east)|-(b.south)},
+	append after command={[rounded corners=0pt](b.south)-|(b.west)}]
+	(c) at (#5,  #6+#4) {\texttt{#2}};
+	
+	
+	\path[draw,black,fill=#1,fill opacity=0.3,rounded corners=8pt] (#5, #6 + #4) -- (#5,#6) -- (#5+#3, #6) -- (#5+#3, #6 + #4) -- (#5, #6 + #4);
+}
+
+
+ 
+\begin{document}
+		\begin{tikzpicture}
+		\package[red!30](ect:9.9:14.5:0:0);	
+		\package[blue!30](clustering:5:13.5:0.3:0.2);	
+		\package[blue!30](generators:4:3:5.6:0.2);	
+		\package[blue!30](tests:4:9.5:5.6:4.2);	
+		\package[green!30](a\_ward:3.5:1.5:5.9:11.3);				\package[green!30](a\_ward\_pb:3.5:1.5:5.9:8.8);
+		\package[green!30](...:3.5:1.5:5.9:6.3);
+		\package[green!30](agglomerative:4.5:8.5:0.5:4.3);	
+		\package[green!30](divisive:4.5:2.8:0.5:0.5);	
+		\package[yellow!95!black](ik\_means:4:1.5:0.7:10.3);
+		\package[yellow!95!black](p\_init:4:1.5:0.7:7.5);
+		\package[yellow!95!black](utils:4:1.5:0.7:4.7);
+		\package[yellow!95!black](utils:4.:1.5:0.7:0.80);
+		
+		\begin{scope}[shift={(10.5,0)}]
+		\package[red!30](ectgui:14.5:14.5:0:0);
+		\package[blue!30](generator\_dialog:5:2.5:0.3:11.1);	
+		\package[blue!30](norm\_settings\_dialog:6:2.5:0.3:7.6);	
+		\package[blue!30](save\_labels\_dialog:5:2.5:0.3:4.1);	
+		\package[blue!30](select\_features\_dialog:6:2.5:0.3:0.4);
+
+		\package[blue!30](hist\_dialog:3.8:2.5:6.5:7.6);
+		\package[blue!30](plot:3.5:2.5:10.8:11.1);
+
+		\package[blue!30](progress\_dialog:4.8:2.5:5.7:11.1);	
+		\package[blue!30](report:3.8:2.5:10.5:7.6);	
+		\package[blue!30](parameters\_dialog:4.5:2.5:5.5:4.1);	
+		\package[blue!30](report\_dialog:4.1:2.5:10.2:4.1);	
+		\package[blue!30](status\_bar:3.5:2.5:6.5:0.4);
+		
+		\package[blue!30](tables:4.1:2.5:10.2:0.4);	
+		\package[green!30](models:3.5:1.5:10.5:0.6);	
+		
+		\end{scope}		
+
+		\end{tikzpicture}
+\end{document}

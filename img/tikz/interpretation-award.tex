@@ -1,0 +1,113 @@
+\documentclass[12pt,tikz]{standalone}
+
+\usepackage[utf8]{inputenc} % use UTF-8
+\usepackage{mmap}
+\usepackage[T2A,OT1]{fontenc} % rus fonts
+\usepackage[russian]{babel} % russian language
+
+\usepackage{color}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{shapes,backgrounds}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{snakes}
+\usetikzlibrary{shapes.geometric, arrows}
+
+ 
+\begin{document}
+		\begin{tikzpicture}[node distance=2cm]
+
+		\begin{scope}
+		\tkzInit[xmax=1,ymax=7,xmin=-1,ymin=0, xstep=0.1]
+		\begin{scope}[dash pattern=on 1pt off 4pt]
+		\tkzGrid
+		\end{scope}	
+		\tkzDrawX[label={}]
+		\tkzLabelX[orig=true,label options={font=\large}]	
+		\fill[blue!60] (0,0) rectangle ++(0.219*10,1); %141.830
+		\node[white] at (8,0.5) {\Large\textbf{141.8\%}};
+		\fill[green!60, yshift=2cm] (0,0) rectangle ++( 0.043 *10,1);
+		\fill[red!60, yshift=4cm] (0,0) rectangle ++(0.496*10,1);
+		\fill[orange!60, yshift=6cm] (0,0) rectangle ++(0.208*10,1);
+%		\node [draw=none,anchor=west, xshift=0cm, rotate=90,anchor=north,outer sep=-4pt, font=\Huge, ] at (-11,3) {Cluster 1 (62)};
+		\node [draw=none,anchor=west, xshift=0cm, rotate=0,anchor=north,outer sep=-4pt, font=\Huge, ] at (0,-1) {Cluster 1 (62)};
+		\draw (0,0) --(0,7);			
+		\node[black, anchor=east] at (-0.5,0.5) {\Huge\textbf{\texttt{price}}};
+		\node[black, anchor=east] at (-0.5,2.5) {\Huge\textbf{\texttt{diag}}};
+		\node[black, anchor=east] at (-0.5,4.5) {\Huge\textbf{\texttt{cpu}}};
+		\node[black, anchor=east] at (-0.5,6.5) {\Huge\textbf{\texttt{ram}}};		
+		\end{scope}
+		                     
+		        
+			
+		\begin{scope}[yshift=-0cm, xshift=22cm]
+		\tkzInit[xmax=1,ymax=7,xmin=-1,ymin=0, xstep=0.1]
+		\begin{scope}[dash pattern=on 1pt off 4pt]
+		\tkzGrid
+		\end{scope}	
+		\tkzDrawX[label={}]
+		\tkzLabelX[orig=true,label options={font=\large}]
+		\fill[blue!60] (0,0) rectangle 					++(0.049 *10,1);
+		\fill[green!60, yshift=2cm] (0,0) rectangle 	++(0.048 *10,1);
+		\fill[red!60, yshift=4cm] (0,0) rectangle 		++(0.205 *10,1);
+		\fill[orange!60, yshift=6cm] (0,0) rectangle	++(0.090 *10,1);
+%		\node [draw=none,anchor=west, xshift=0cm, rotate=90,anchor=north,outer sep=-4pt, font=\Huge, ] at (-11,3) {Cluster 2 (82)};
+		\node [draw=none,anchor=west, xshift=0cm, rotate=0,anchor=north,outer sep=-4pt, font=\Huge, ] at (0,-1) {Cluster 2 (82)};
+		\draw (0,0) --(0,7);
+		\node[black, anchor=east] at (-0.5,0.5) {\Huge\textbf{\texttt{price}}};
+		\node[black, anchor=east] at (-0.5,2.5) {\Huge\textbf{\texttt{diag}}};
+		\node[black, anchor=east] at (-0.5,4.5) {\Huge\textbf{\texttt{cpu}}};
+		\node[black, anchor=east] at (-0.5,6.5) {\Huge\textbf{\texttt{ram}}};		
+		\end{scope}		         		
+		          
+		
+		
+		\begin{scope}[yshift=-10cm]
+		\tkzInit[xmax=1,ymax=7,xmin=-1,ymin=0, xstep=0.1]
+		\begin{scope}[dash pattern=on 1pt off 4pt]
+		\tkzGrid
+		\end{scope}	
+		\tkzDrawX[label={}]
+		\tkzLabelX[orig=true,label options={font=\large}]	
+		\fill[blue!60] (0,0) rectangle 					++(-0.053 *10,1);
+		\fill[green!60, yshift=2cm] (0,0) rectangle 	++( 0.023 *10,1);
+		\fill[red!60, yshift=4cm] (0,0) rectangle 		++(-0.139 *10,1);
+		\fill[orange!60, yshift=6cm] (0,0) rectangle	++(-0.024 *10,1);
+%		\node [draw=none,anchor=west, xshift=0cm, rotate=90,anchor=north,outer sep=-4pt, font=\Huge, ] at (-11,3) {Cluster 3 (132)};
+		\node [draw=none,anchor=west, xshift=0cm, rotate=0,anchor=north,outer sep=-4pt, font=\Huge, ] at (0,-1) {Cluster 3 (132)};
+		\draw (0,0) --(0,7);
+		\node[black, anchor=west] at (0.5,0.5) {\Huge\textbf{\texttt{price}}};
+		\node[black, anchor=west] at (0.5,2.5) {\Huge\textbf{\texttt{diag}}};
+		\node[black, anchor=west] at (0.5,4.5) {\Huge\textbf{\texttt{cpu}}};
+		\node[black, anchor=west] at (0.5,6.5) {\Huge\textbf{\texttt{ram}}};		
+		\end{scope}
+       		       
+		             
+		
+		\begin{scope}[yshift=-10cm, xshift=22cm]
+		\tkzInit[xmax=1,ymax=7,xmin=-1,ymin=0, xstep=0.1]
+		\begin{scope}[dash pattern=on 1pt off 4pt]
+		\tkzGrid
+		\end{scope}	
+		\tkzDrawX[label={}]
+		\tkzLabelX[orig=true,label options={font=\large}]
+		\fill[blue!60] (0,0) rectangle 				 ++(-0.096  *10,1);
+		\fill[green!60, yshift=2cm] (0,0) rectangle	 ++(-0.087  *10,1);
+		\fill[red!60, yshift=4cm] (0,0) rectangle	 ++(-0.266  *10,1);
+		\fill[orange!60, yshift=6cm] (0,0) rectangle ++(-0.155  *10,1);
+%		\node [draw=none,anchor=west, xshift=0cm, rotate=90,anchor=north,outer sep=-4pt, font=\Huge, ] at (-11,3) {Cluster 4 (110)};
+		\node [draw=none,anchor=west, xshift=0cm, rotate=0,anchor=north,outer sep=-4pt, font=\Huge ] at (0,-1) {Cluster 4 (110)};
+	
+		\draw (0,0) --(0,7);
+		\node[black, anchor=west] at (0.5,0.5) {\Huge\textbf{\texttt{price}}};
+		\node[black, anchor=west] at (0.5,2.5) {\Huge\textbf{\texttt{diag}}};
+		\node[black, anchor=west] at (0.5,4.5) {\Huge\textbf{\texttt{cpu}}};
+		\node[black, anchor=west] at (0.5,6.5) {\Huge\textbf{\texttt{ram}}};		
+		
+		\end{scope}				
+       	       	        	        
+			          
+			
+			
+		\end{tikzpicture}
+\end{document}

@@ -1,0 +1,23 @@
+<offers>
+	<offer id="138492682" available="true" group_id="138492684">
+		<url></url>
+		<price>11990</price>
+		<currencyId>RUR</currencyId>
+		<categoryId>1168060</categoryId>
+		<...>
+		<name>Meizu U10 32GB, Silver White</name>
+		<vendor>Meizu</vendor>
+		<weight>0.330</weight>
+		<dimensions>15.500/8.500/6.500</dimensions>
+		<param name="Вес" unit="г">330</param>
+		<...>
+		<param name="Диагональ">5</param>
+		<param name="Технология матрицы">IPS</param>
+		<param name="Процессор">MT6750 (8 ядер) 1,5 ГГц</param>
+		<param name="Встроенная память" unit="ГБ">32</param>
+		<param name="Оперативная память" unit="МБ">3072</param>
+		<...>
+	</offer>
+	<...>
+</offers>
+		

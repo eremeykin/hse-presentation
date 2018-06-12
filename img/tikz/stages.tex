@@ -1,0 +1,40 @@
+\documentclass[12pt,tikz]{standalone}
+
+\usepackage[utf8]{inputenc} % use UTF-8
+\usepackage{mmap}
+\usepackage[T2A,OT1]{fontenc} % rus fonts
+\usepackage[russian]{babel} % russian language
+
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes,backgrounds}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+ 
+\begin{document}
+		\begin{tikzpicture}[node distance=4cm]
+%		   \tkzInit[xmax=16,ymax=11,xmin=0,ymin=0]
+%			\begin{scope}[dash pattern=on 1pt off 4pt]
+%			\tkzGrid
+%			\end{scope}
+%		   \tkzLabelX[orig=true,label options={font=\normalfont},step=1]
+%		   \tkzLabelY[orig=false,label options={font=\normalfont}]
+%		   \tkzDrawX[label={}] %right space=1.0,
+%		   \tkzDrawY[label={}]
+	  		\node (st1) [startstop, minimum width=2cm, fill=red!30] {Загрузка данных};
+	  		\node (st2) [startstop, minimum width=2cm, right of =st1, fill=cyan!30] {Нормализация};
+	  		\draw [arrow] (st1) -- (st2);
+	  		\node (st3) [startstop, minimum width=2cm, right of =st2, fill=green!30] {Кластеризация};
+	  		\draw [arrow] (st2) -- (st3);		
+	  		\node (st4) [startstop, minimum width=2cm, right of =st3, fill=orange!30]	 {Анализ};
+	  		\draw [arrow] (st3) -- (st4);
+				
+		\end{tikzpicture}
+\end{document}

@@ -1,0 +1,116 @@
+\documentclass[12pt,tikz]{standalone}
+
+\usepackage[utf8]{inputenc} % use UTF-8
+\usepackage{mmap}
+\usepackage[T2A,OT1]{fontenc} % rus fonts
+\usepackage[russian]{babel} % russian language
+\usepackage{pgf-umlcd}
+\usepackage{tkz-euclide}
+\usepackage{wasysym}
+\usetikzlibrary{shapes,backgrounds}
+
+
+
+\begin{document}
+		\begin{tikzpicture}[node distance=4cm, thin]
+			
+													
+				%%%%%%%%%%%%%%%%  ClusterStructure  %%%%%%%%%%%%%
+				\begin{class}[text  width=9cm]{ClusterStructure}{0,0}
+				\attribute {dim\_cols : int}
+				\attribute {dim\_rows : int}
+				\attribute {clusters : list}
+				\attribute {clusters\_number : int}
+				\attribute {data : np.array}
+				\attribute {labels : np.array}
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%								
+				\operation {\_\_init\_\_(data : np.array)}
+				\operation {add\_all\_clusters(set\_of\_clusters : set)}
+				\operation {add\_cluster(cluster : Cluster)}
+				\operation {clear()}				
+				\operation {current\_labels()}				
+				\operation {del\_cluster(cluster : Cluster)}				
+				\operation {release\_new\_batch(indices\_batch : list)}		
+				\operation {release\_new\_cluster(points\_indices : np.array)}
+				\end{class}	
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%				
+				
+				
+				%%%%%%%  AgglomerativeClusterStructure  %%%%%%%%%				
+				\begin{abstractclass}[text  width=11.5cm]{AgglomerativeClusterStructure}{12,-2.15}
+				\inherit{ClusterStructure}				
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%								
+				\operation {dist\_cluster\_to\_cluster(cluster1 : Cluster, cluster2 : Cluster)}
+				\operation {dist\_point\_to\_cluster(point : np.array, cluster : Cluster)}
+				\operation {dist\_point\_to\_point(point1 : np.array, point2 : np.array, $ \rhd $cluster\_of\_point1 : Cluster)}				
+				\end{abstractclass}	
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%								
+				
+				
+				%%%%%%%%%%%  AWardClusterStrucutre  %%%%%%%%%%%								
+				\begin{class}[text  width=11.5cm]{AWardClusterStrucutre}{12,-7}
+				\inherit{AgglomerativeClusterStructure}
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%								
+				\operation {dist\_cluster\_to\_cluster(cluster1 : Cluster, cluster2 : Cluster)}
+				\operation {dist\_point\_to\_cluster(point : np.array, cluster : Cluster)}
+				\operation {dist\_point\_to\_point(point1 : np.array, point2 : np.array, $ \rhd $cluster\_of\_point1 : Cluster)}	
+				\operation {merge(cluster1 : Cluster, cluster2 : Cluster)}				
+				\operation {release\_new\_cluster(points\_indices : np.array)}				
+				\end{class}
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%								
+				
+				
+				%%%%%%%%%%%  AWardPBClusterStrucutre  %%%%%%%%%%%								
+				\begin{class}[text  width=11.5cm,anchor=center]{AWardPBClusterStrucutre}{12,4}
+				\inherit{AgglomerativeClusterStructure}
+				\attribute{p : float}
+				\attribute{beta : float}
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%								
+				\operation {\_\_init\_\_(data : np.array, p : float, beta : float)}				
+				\operation {dist\_cluster\_to\_cluster(cluster1 : Cluster, cluster2 : Cluster)}
+				\operation {dist\_point\_to\_cluster(point : np.array, cluster : Cluster)}
+				\operation {dist\_point\_to\_point(point1 : np.array, point2 : np.array, $ \rhd $cluster\_of\_point1 : Cluster)}	
+				\operation {merge(cluster1 : Cluster, cluster2 : Cluster)}				
+				\end{class}
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%								
+			
+				
+				%%%%%%%%%%%%%%%%%%  APInit  %%%%%%%%%%%%%%%%%%%%%%
+				\begin{class}[text  width=9cm]{APInit}{24,-5}
+				\attribute {\_MAX\_LOOPS : int}
+				\attribute {\_cluster\_structure : ClusterStructure}
+				\attribute {\_completed : bool}
+				\attribute {\_data : np.array}
+				\attribute {\_index : np.array}
+				\attribute {\_origin : np.array}
+				\attribute {threshold : int}
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%				
+				\operation {\_\_call\_\_()}
+				\operation {\_\_init\_\_(data : np.array, threshold : int)}
+				\operation {\_calculate\_origin()}
+				\operation {\_cluster(points\_indices : np.array)}
+				\operation {\_create\_cluster\_strucutre()}
+				\operation{\_furthest\_point\_relative\_index(current\_data : $ \rhd $np.array)}
+				\end{class}	
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%				
+				
+				
+				%%%%%%%%%%%%%%%%%  APInitPB  %%%%%%%%%%%%%%%%%%%%%
+				\begin{class}[text  width=8cm, anchor=center]{APInitPB}{24,3.5}
+				\inherit {APInit}
+				\attribute {beta : float}
+				\attribute {p : float}
+				\attribute {threshold : int}
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%								
+				\operation {\_\_init\_\_(data : np.array, threshold : int)}
+				\operation {\_calculate\_origin()}
+				\operation {\_create\_cluster\_strucutre()}
+				\end{class}	
+				%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+				
+				\composition{[] APInitPB}{}{}{AWardPBClusterStrucutre}				
+				\composition{APInit}{}{}{AWardClusterStrucutre}				
+%				\node[] at (26.8,-15.4) {cluster\_structure};
+%				\node[] at (14,-13.6) {cluster\_structure};
+		\end{tikzpicture}
+\end{document}

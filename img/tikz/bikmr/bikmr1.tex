@@ -1,0 +1,17 @@
+\documentclass[12pt,tikz]{standalone}
+ 
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes,backgrounds}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{snakes}
+\usepackage{mathtools} 
+\begin{document}
+		\begin{tikzpicture}[scale=1]
+   		\tkzInit[xmax=3,ymax=3,xmin=-3,ymin=-3]
+		\begin{scope}[dash pattern=on 0pt off 4pt]
+		\tkzGrid
+		\end{scope}
+
+		\node [black] at (0, 0) {$ \underbrace{BiKM}_{\makebox[0pt]{\text{Bisecting K-Means}}}-R $};
+		\end{tikzpicture}
+\end{document}
